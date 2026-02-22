@@ -1,0 +1,174 @@
+.pipeline-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 4rem auto 0;
+    padding: 2rem;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(30, 41, 59, 0.3) 100%);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pipeline-track-layer {
+    position: absolute;
+    /* Center vertical with Icon (5rem height) + Wrapper Padding (2rem) */
+    top: calc(2rem + 2.5rem);
+    /* Horizontal Alignment: Wrapper Pad (2rem) + Stages Pad (1rem) + Half Stage Width (70px) */
+    left: calc(3rem + 70px);
+    right: calc(3rem + 70px);
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+    transform: translateY(-50%);
+    /* Center the line thickness */
+}
+
+/* Volumetric Energy Trail */
+.pipeline-flowing-dot {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 60px;
+    /* Longer tail */
+    height: 12px;
+    /* Thicker for volume */
+    background: linear-gradient(90deg, transparent 0%, rgba(0, 255, 157, 0.8) 100%);
+    transform: translateY(-50%);
+    opacity: 0;
+    /* Taper shape: narrow at left (tail), full at right (head) */
+    clip-path: polygon(0 45%, 100% 0, 100% 100%, 0 55%);
+    filter: blur(1.5px);
+    z-index: 5;
+}
+
+/* Bright Head/Core */
+.pipeline-flowing-dot::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff, 0 0 20px #00ff9d;
+    z-index: 6;
+    filter: none;
+    /* Keep head sharp */
+}
+
+.pipeline-stages {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    padding: 0 1rem;
+}
+
+.pipeline-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 140px;
+    text-align: center;
+    cursor: default;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.pipeline-stage:hover {
+    transform: scale(1.03);
+}
+
+.icon-wrapper {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0f172a;
+    /* Match bg to hide track line behind */
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 50%;
+    /* Transition handled by JS or standard hover */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    position: relative;
+    z-index: 2;
+}
+
+/* Removing hover green glow to avoid conflict with animation */
+.pipeline-stage:hover .icon-wrapper {
+    border-color: rgba(148, 163, 184, 0.5);
+    /* box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); */
+}
+
+.stage-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #94a3b8;
+    transition: color 0.3s ease;
+}
+
+.pipeline-stage:hover .stage-icon {
+    color: #f8fafc;
+}
+
+.stage-info h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+    .pipeline-stages {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .pipeline-track-layer {
+        top: 2rem;
+        bottom: 2rem;
+        left: 50%;
+        width: 2px;
+        height: auto;
+        transform: translateX(-50%);
+    }
+
+    /* Mobile Vertical Dot - Taper top to bottom */
+    .pipeline-flowing-dot {
+        width: 12px;
+        height: 60px;
+        background: linear-gradient(180deg, transparent 0%, rgba(0, 255, 157, 0.8) 100%);
+        clip-path: polygon(45% 0, 55% 0, 100% 100%, 0 100%);
+    }
+
+    .pipeline-flowing-dot::after {
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+
+    .pipeline-stage {
+        width: 100%;
+        flex-direction: row;
+        text-align: left;
+        gap: 2rem;
+        padding-left: 1rem;
+    }
+
+    .icon-wrapper {
+        min-width: 4rem;
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .stage-info {
+        text-align: left;
+    }
+}
