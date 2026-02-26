@@ -60,7 +60,7 @@ const StartupForm = () => {
                 monthlyUsers: formData.monthlyUsers ? Number(formData.monthlyUsers) : undefined
             };
 
-            const response = await fetch('http://localhost:5001/api/submit', {
+            const response = await fetch('/api/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -11,7 +11,7 @@ const AdminDashboard = () => {
 
     const fetchSubmissions = async () => {
         try {
-            const response = await fetch('http://localhost:5001/api/submissions');
+            const response = await fetch('/api/submissions');
             const data = await response.json();
             setSubmissions(data);
             setLoading(false);
