@@ -3,9 +3,10 @@ import anime from 'animejs';
 import './HowItWorks.css';
 
 const steps = [
-    { title: 'Capture Demand', desc: 'Our AI scans platforms like Reddit & X to find users actively asking for solutions.' },
-    { title: 'Qualify & Match', desc: 'We verify the intent and match the request with the perfect startup building it.' },
-    { title: 'Connect', desc: 'We facilitate a warm introduction so you can solve their problem instantly.' }
+    { title: 'Signal Detection', desc: 'Monitor real-time digital discussions.' },
+    { title: 'Intent Classification', desc: 'Identify purchase-ready or problem-aware intent.' },
+    { title: 'Match Scoring', desc: 'Rank signals based on relevance and urgency.' },
+    { title: 'Activation Layer', desc: 'Generate structured outreach and positioning insights.' }
 ];
 
 const HowItWorks = () => {

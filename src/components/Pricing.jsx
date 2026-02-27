@@ -51,8 +51,8 @@ const Pricing = () => {
                     {/* Plan 1 - Explorer */}
                     <div className="pricing-card">
                         <div className="card-header">
-                            <h3 className="plan-name">Individual</h3>
-                            <p className="plan-tagline">Validate your idea.</p>
+                            <h3 className="plan-name">Individual Validation</h3>
+                            <p className="plan-tagline">General AI model for early idea testing. Designed for signal exploration and validation.</p>
                             <div className="plan-price">
                                 <span className="currency">$</span>
                                 <span className="amount">0</span>
@@ -93,8 +93,8 @@ const Pricing = () => {
                     <div className="pricing-card highlighted">
                         <div className="popular-badge">Most Popular</div>
                         <div className="card-header">
-                            <h3 className="plan-name accent-text">Team Growth</h3>
-                            <p className="plan-tagline">Dedicated product-specific AI model built for focused startup teams.</p>
+                            <h3 className="plan-name accent-text">Team Intelligence</h3>
+                            <p className="plan-tagline">Dedicated product-specific AI model built for startup teams. Improves signal precision and reduces manual filtering time.</p>
                             <div className="plan-price fade-in">
                                 <span className="currency">$</span>
                                 <span className="amount">{isYearly ? '24' : '30'}</span>
@@ -126,15 +126,16 @@ const Pricing = () => {
                             </ul>
                         </div>
                         <div className="card-footer">
-                            <button className="btn btn-primary plan-btn highlight-btn">Upgrade to Team Growth</button>
+                            <button className="btn btn-primary plan-btn highlight-btn">Upgrade to Team Intelligence</button>
+                            <p className="plan-note" style={{ marginTop: '1rem', textAlign: 'center' }}>Designed to increase qualified signal detection efficiency.</p>
                         </div>
                     </div>
 
                     {/* Plan 3 - Pro */}
                     <div className="pricing-card">
                         <div className="card-header">
-                            <h3 className="plan-name">Team Pro</h3>
-                            <p className="plan-tagline">Advanced traction activation tools for high-velocity teams.</p>
+                            <h3 className="plan-name">Team Activation</h3>
+                            <p className="plan-tagline">Everything in Team Intelligence, plus automated traction activation tools.</p>
                             <div className="plan-price fade-in">
                                 <span className="currency">$</span>
                                 <span className="amount">{isYearly ? '40' : '50'}</span>
@@ -145,7 +146,7 @@ const Pricing = () => {
                             <ul className="feature-list">
                                 <li>
                                     <svg className="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                                    Everything in Team Growth
+                                    Everything in Team Intelligence
                                 </li>
                                 <li>
                                     <svg className="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -166,8 +167,8 @@ const Pricing = () => {
                             </ul>
                         </div>
                         <div className="card-footer">
-                            <button className="btn btn-secondary plan-btn">Go Team Pro</button>
-                            <p className="plan-note">Designed for startup teams who want speed.</p>
+                            <button className="btn btn-secondary plan-btn">Go Team Activation</button>
+                            <p className="plan-note">Converts detected signals into structured growth actions.</p>
                         </div>
                     </div>
                 </div>
@@ -185,23 +186,23 @@ const Pricing = () => {
                             <thead>
                                 <tr>
                                     <th>Features</th>
-                                    <th>Individual</th>
-                                    <th className="highlight-col">Team Growth</th>
-                                    <th>Team Pro</th>
+                                    <th>Individual Validation</th>
+                                    <th className="highlight-col">Team Intelligence</th>
+                                    <th>Team Activation</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Signal Accuracy</td>
+                                    <td>Signal Precision</td>
                                     <td>~80%</td>
                                     <td className="highlight-cell">99%</td>
                                     <td>99%</td>
                                 </tr>
                                 <tr>
-                                    <td>Product-Specific Matching</td>
-                                    <td><span className="dash">-</span></td>
-                                    <td className="highlight-cell"><span className="check-green">✓</span></td>
-                                    <td><span className="check-white">✓</span></td>
+                                    <td>Model Type</td>
+                                    <td>General</td>
+                                    <td className="highlight-cell">Product-Specific</td>
+                                    <td>Product-Specific</td>
                                 </tr>
                                 <tr>
                                     <td>Match Scoring</td>
@@ -210,13 +211,13 @@ const Pricing = () => {
                                     <td>Advanced</td>
                                 </tr>
                                 <tr>
-                                    <td>Outreach Drafting</td>
+                                    <td>Outreach Automation</td>
                                     <td><span className="dash">-</span></td>
                                     <td className="highlight-cell"><span className="dash">-</span></td>
                                     <td><span className="check-white">✓</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Competitive Insights</td>
+                                    <td>Competitive Positioning Analysis</td>
                                     <td><span className="dash">-</span></td>
                                     <td className="highlight-cell"><span className="dash">-</span></td>
                                     <td><span className="check-white">✓</span></td>
@@ -227,9 +228,37 @@ const Pricing = () => {
                                     <td className="highlight-cell"><span className="dash">-</span></td>
                                     <td><span className="check-white">✓</span></td>
                                 </tr>
+                                <tr>
+                                    <td>Traction Activation Layer</td>
+                                    <td><span className="dash">-</span></td>
+                                    <td className="highlight-cell"><span className="dash">-</span></td>
+                                    <td><span className="check-white">✓</span></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
+                </div>
+
+                <div className="pricing-rationale-section">
+                    <h3 className="rationale-title">Why Pricing Scales</h3>
+                    <div className="rationale-grid">
+                        <div className="rationale-card">
+                            <h4>Individual Validation</h4>
+                            <p>Broad model trained on general datasets for exploratory use.</p>
+                        </div>
+                        <div className="rationale-card highlight">
+                            <h4>Team Intelligence</h4>
+                            <p>Product-specific model improves signal filtering efficiency and increases actionable insight quality.</p>
+                        </div>
+                        <div className="rationale-card">
+                            <h4>Team Activation</h4>
+                            <p>Adds automated engagement and positioning tools to accelerate customer acquisition.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="roi-framing-section">
+                    <p>If one additional customer is acquired through improved signal precision, the Team Activation plan pays for itself.</p>
                 </div>
 
                 <div className="trust-section">

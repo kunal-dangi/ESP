@@ -2,22 +2,11 @@ import React, { useEffect, useRef } from 'react';
 import anime from 'animejs';
 import './Problem.css';
 
-const features = [
-    {
-        icon: '📊',
-        title: 'Public Demand',
-        desc: 'Millions of users post what they need on Reddit, X, and Facebook every day.',
-    },
-    {
-        icon: '🔍',
-        title: 'Hard to Find',
-        desc: 'General AI models often result in reduced signal precision when sorting through social noise.',
-    },
-    {
-        icon: '💡',
-        title: 'We Bridge The Gap',
-        desc: 'Our AI filters noise and delivers qualified leads directly to startup teams.',
-    },
+const problems = [
+    'Startup teams struggle to identify high-intent demand signals across noisy digital platforms.',
+    'Manual filtering is inefficient and time-consuming.',
+    'Generic AI tools lack product-specific precision.',
+    'Valuable early customers are often overlooked.'
 ];
 
 const Problem = () => {
@@ -28,10 +17,10 @@ const Problem = () => {
             ([entry]) => {
                 if (entry.isIntersecting) {
                     anime({
-                        targets: '.feature-card',
-                        translateY: [50, 0],
+                        targets: '.problem-list li',
+                        translateY: [20, 0],
                         opacity: [0, 1],
-                        delay: anime.stagger(200),
+                        delay: anime.stagger(150),
                         easing: 'easeOutQuad'
                     });
                     observer.unobserve(entry.target);
@@ -40,10 +29,7 @@ const Problem = () => {
             { threshold: 0.1 }
         );
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
-        }
-
+        if (sectionRef.current) observer.observe(sectionRef.current);
         return () => {
             if (sectionRef.current) observer.unobserve(sectionRef.current);
         };
@@ -52,17 +38,14 @@ const Problem = () => {
     return (
         <section className="problem-section section" ref={sectionRef} id="problem">
             <div className="container">
-                <h2 className="section-title">Why We Built This?</h2>
-                <p className="section-subtitle">Real problems need real solutions. Startups fail when they build what nobody wants. We fix that.</p>
+                <h2 className="section-title">The Problem</h2>
 
-                <div className="features-grid">
-                    {features.map((feature, index) => (
-                        <div key={index} className="feature-card glass-card">
-                            <div className="feature-icon">{feature.icon}</div>
-                            <h3>{feature.title}</h3>
-                            <p>{feature.desc}</p>
-                        </div>
-                    ))}
+                <div style={{ maxWidth: '800px', margin: '0 auto', opacity: 0 }} className="problem-list glass-card">
+                    <ul style={{ listStyleType: 'disc', padding: '2rem 3rem', color: 'var(--text-white)', fontSize: '1.1rem', lineHeight: '1.8' }}>
+                        {problems.map((point, index) => (
+                            <li key={index} style={{ marginBottom: '1rem', opacity: 0 }}>{point}</li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </section>

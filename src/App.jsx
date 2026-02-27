@@ -10,16 +10,24 @@ import StartupForm from './components/StartupForm';
 import Footer from './components/Footer';
 import AdminDashboard from './components/AdminDashboard'; // Import the new dashboard
 import Pricing from './components/Pricing';
+import SyntrixApproach from './components/SyntrixApproach';
+import MarketOpportunity from './components/MarketOpportunity';
+import CompetitiveLandscape from './components/CompetitiveLandscape';
+import Roadmap from './components/Roadmap';
 
 const LandingPage = () => (
   <>
     <Hero />
     <Problem />
+    <SyntrixApproach />
     <ProductDemo />
+    <MarketOpportunity />
     <HowItWorks />
+    <CompetitiveLandscape />
     <ForStartups />
     <Pricing />
     <StartupForm />
+    <Roadmap />
     <Footer />
   </>
 );
