@@ -2,6 +2,7 @@
 .problem-section {
     background-color: var(--bg-dark);
     padding: 8rem 0;
+    color: #e5e5e5;
 }
 
 .section-title,
