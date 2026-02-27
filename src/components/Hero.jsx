@@ -69,14 +69,11 @@ const Hero = () => {
 
             <div className="container hero-content">
                 <h1 className="hero-headline" ref={headlineRef}>
-                    <span className="word">Helping </span>
-                    <span className="word gradient-text">Small Startups </span>
-                    <span className="word">Get </span>
-                    <span className="word gradient-text">Qualified Leads.</span>
+                    <span className="word gradient-text">Syntrix</span>
                 </h1>
 
                 <p className="hero-subheading" ref={subRef}>
-                    Stop searching for customers. We identify high-intent demand from social communities and bring them directly to you.
+                    Precision Signal Intelligence for Startup Teams.
                 </p>
 
                 <div className="hero-buttons" ref={btnGroupRef}>

@@ -43,7 +43,7 @@
     background-color: #00ff9d;
     /* Neon Green */
     border-radius: 50%;
-    box-shadow: 0 0 8px #00ff9d, 0 0 15px rgba(0, 255, 157, 0.4);
+    box-shadow: 0 0 4px #00ff9d, 0 0 8px rgba(0, 255, 157, 0.2);
     opacity: 0.5;
 }
 

@@ -130,7 +130,7 @@ const PipelineFlow = () => {
                 borderColor: ['rgba(148, 163, 184, 0.2)', '#00ff9d'],
                 boxShadow: [
                     '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                    '0 0 25px rgba(0, 255, 157, 0.9), inset 0 0 15px rgba(0, 255, 157, 0.3)'
+                    '0 0 15px rgba(0, 255, 157, 0.5), inset 0 0 10px rgba(0, 255, 157, 0.2)'
                 ],
                 scale: [1, 1.15], // Tension build
                 duration: rampUpTime,
@@ -143,7 +143,7 @@ const PipelineFlow = () => {
                 targets: iconWrapperRefs.current[index],
                 borderColor: ['#00ff9d', 'rgba(148, 163, 184, 0.2)'],
                 boxShadow: [
-                    '0 0 25px rgba(0, 255, 157, 0.9), inset 0 0 15px rgba(0, 255, 157, 0.3)',
+                    '0 0 15px rgba(0, 255, 157, 0.5), inset 0 0 10px rgba(0, 255, 157, 0.2)',
                     '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
                 ],
                 scale: [1.15, 1], // Snap back

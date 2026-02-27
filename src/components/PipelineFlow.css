@@ -52,7 +52,7 @@
     height: 6px;
     background: #fff;
     border-radius: 50%;
-    box-shadow: 0 0 10px #fff, 0 0 20px #00ff9d;
+    box-shadow: 0 0 5px #fff, 0 0 10px #00ff9d;
     z-index: 6;
     filter: none;
     /* Keep head sharp */

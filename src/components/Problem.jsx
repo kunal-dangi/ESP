@@ -11,12 +11,12 @@ const features = [
     {
         icon: '🔍',
         title: 'Hard to Find',
-        desc: 'Startups often miss these high-intent signals buried in social noise.',
+        desc: 'General AI models often result in reduced signal precision when sorting through social noise.',
     },
     {
         icon: '💡',
         title: 'We Bridge The Gap',
-        desc: 'Our AI filters noise and delivers qualified leads directly to founders.',
+        desc: 'Our AI filters noise and delivers qualified leads directly to startup teams.',
     },
 ];
 

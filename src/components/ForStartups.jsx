@@ -42,7 +42,7 @@ const ForStartups = () => {
         <section className="for-startups-section section" id="for-startups">
             <div className="container">
                 <h2 className="section-title">Why Join Us?</h2>
-                <p className="startups-subtitle">Stop chasing cold leads. Get warm introductions to people who actually want your product.</p>
+                <p className="startups-subtitle">Stop chasing cold leads. Get precise signal introductions for your startup team.</p>
 
                 <div className="benefits-grid">
                     <div className="benefit-card glass-card">

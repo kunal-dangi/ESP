@@ -51,7 +51,7 @@ const Pricing = () => {
                     {/* Plan 1 - Explorer */}
                     <div className="pricing-card">
                         <div className="card-header">
-                            <h3 className="plan-name">Explorer</h3>
+                            <h3 className="plan-name">Individual</h3>
                             <p className="plan-tagline">Validate your idea.</p>
                             <div className="plan-price">
                                 <span className="currency">$</span>
@@ -93,8 +93,8 @@ const Pricing = () => {
                     <div className="pricing-card highlighted">
                         <div className="popular-badge">Most Popular</div>
                         <div className="card-header">
-                            <h3 className="plan-name accent-text">Growth</h3>
-                            <p className="plan-tagline">Focused traction for serious builders.</p>
+                            <h3 className="plan-name accent-text">Team Growth</h3>
+                            <p className="plan-tagline">Dedicated product-specific AI model built for focused startup teams.</p>
                             <div className="plan-price fade-in">
                                 <span className="currency">$</span>
                                 <span className="amount">{isYearly ? '24' : '30'}</span>
@@ -126,15 +126,15 @@ const Pricing = () => {
                             </ul>
                         </div>
                         <div className="card-footer">
-                            <button className="btn btn-primary plan-btn highlight-btn">Upgrade to Growth</button>
+                            <button className="btn btn-primary plan-btn highlight-btn">Upgrade to Team Growth</button>
                         </div>
                     </div>
 
                     {/* Plan 3 - Pro */}
                     <div className="pricing-card">
                         <div className="card-header">
-                            <h3 className="plan-name">Pro Activation</h3>
-                            <p className="plan-tagline">Turn signals into customers.</p>
+                            <h3 className="plan-name">Team Pro</h3>
+                            <p className="plan-tagline">Advanced traction activation tools for high-velocity teams.</p>
                             <div className="plan-price fade-in">
                                 <span className="currency">$</span>
                                 <span className="amount">{isYearly ? '40' : '50'}</span>
@@ -145,7 +145,7 @@ const Pricing = () => {
                             <ul className="feature-list">
                                 <li>
                                     <svg className="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                                    Everything in Growth
+                                    Everything in Team Growth
                                 </li>
                                 <li>
                                     <svg className="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -166,8 +166,8 @@ const Pricing = () => {
                             </ul>
                         </div>
                         <div className="card-footer">
-                            <button className="btn btn-secondary plan-btn">Go Pro</button>
-                            <p className="plan-note">Designed for founders who want speed.</p>
+                            <button className="btn btn-secondary plan-btn">Go Team Pro</button>
+                            <p className="plan-note">Designed for startup teams who want speed.</p>
                         </div>
                     </div>
                 </div>
@@ -185,9 +185,9 @@ const Pricing = () => {
                             <thead>
                                 <tr>
                                     <th>Features</th>
-                                    <th>Explorer</th>
-                                    <th className="highlight-col">Growth</th>
-                                    <th>Pro Activation</th>
+                                    <th>Individual</th>
+                                    <th className="highlight-col">Team Growth</th>
+                                    <th>Team Pro</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -249,7 +249,7 @@ const Pricing = () => {
                         <svg className="trust-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
-                        <span>Built for early-stage founders.</span>
+                        <span>Built for early-stage startup teams.</span>
                     </div>
                 </div>
             </div>

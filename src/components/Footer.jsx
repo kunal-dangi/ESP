@@ -7,8 +7,8 @@ const Footer = () => {
             <div className="container">
                 <div className="footer-content">
                     <div className="footer-brand">
-                        <h3>DemandIntel</h3>
-                        <p>Turning Online Demand into Startup Growth.</p>
+                        <h3>Syntrix</h3>
+                        <p>Precision Signal Intelligence for Startup Teams.</p>
                     </div>
                     <div className="footer-links">
                         <a href="#">About</a>
@@ -17,7 +17,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="footer-copyright">
-                    © 2026 DemandIntel. All rights reserved.
+                    © 2026 Syntrix. All rights reserved.
                 </div>
             </div>
         </footer>
