@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import './Pricing.css';
 
 const Pricing = () => {
@@ -54,9 +54,7 @@ const Pricing = () => {
                             <h3 className="plan-name">Individual Validation</h3>
                             <p className="plan-tagline">General AI model for early idea testing. Designed for signal exploration and validation.</p>
                             <div className="plan-price">
-                                <span className="currency">$</span>
-                                <span className="amount">0</span>
-                                <span className="period">/month</span>
+                                <span className="amount">Free</span>
                             </div>
                         </div>
                         <div className="card-body">
@@ -96,8 +94,8 @@ const Pricing = () => {
                             <h3 className="plan-name accent-text">Team Intelligence</h3>
                             <p className="plan-tagline">Dedicated product-specific AI model built for startup teams. Improves signal precision and reduces manual filtering time.</p>
                             <div className="plan-price fade-in">
-                                <span className="currency">$</span>
-                                <span className="amount">{isYearly ? '24' : '30'}</span>
+                                <span className="currency">₹</span>
+                                <span className="amount">{isYearly ? '399' : '499'}</span>
                                 <span className="period">/month</span>
                             </div>
                         </div>
@@ -137,8 +135,8 @@ const Pricing = () => {
                             <h3 className="plan-name">Team Activation</h3>
                             <p className="plan-tagline">Everything in Team Intelligence, plus automated traction activation tools.</p>
                             <div className="plan-price fade-in">
-                                <span className="currency">$</span>
-                                <span className="amount">{isYearly ? '40' : '50'}</span>
+                                <span className="currency">₹</span>
+                                <span className="amount">{isYearly ? '799' : '999'}</span>
                                 <span className="period">/month</span>
                             </div>
                         </div>

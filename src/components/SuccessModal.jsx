@@ -8,6 +8,61 @@ const SuccessModal = ({ isOpen, onClose }) => {
     const checkmarkPathRef = useRef(null);
     const particlesRef = useRef(null);
 
+    function handleClose() {
+        // Exit Animation
+        anime({
+            targets: [overlayRef.current, modalRef.current],
+            opacity: 0,
+            duration: 400,
+            easing: 'easeInQuad',
+            complete: () => {
+                if (onClose) onClose();
+            }
+        });
+    }
+
+    function createConfetti(container) {
+        if (!container) return;
+        container.innerHTML = ''; // Clear previous
+
+        const colors = ['#3b82f6', '#8b5cf6', '#10b981', '#f59e0b', '#ec4899'];
+        const particleCount = 30;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('confetti-particle');
+
+            // Random styles
+            const bg = colors[Math.floor(Math.random() * colors.length)];
+            const size = Math.random() * 4 + 4; // 4px to 8px
+
+            particle.style.backgroundColor = bg;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+
+            // Center start position needs to be relative to the checkmark or modal center
+            // Let's place them in the center of the checkmark area roughly
+            particle.style.left = '50%';
+            particle.style.top = '30%'; // Approximate checkmark height position
+
+            container.appendChild(particle);
+        }
+
+        // Animate particles
+        const particles = container.querySelectorAll('.confetti-particle');
+
+        anime({
+            targets: particles,
+            translateX: () => anime.random(-150, 150),
+            translateY: () => anime.random(-150, 100),
+            scale: [1, 0],
+            opacity: [1, 0],
+            easing: 'easeOutExpo',
+            duration: 1500,
+            autoplay: true
+        });
+    }
+
     useEffect(() => {
         if (isOpen) {
             // Reset state
@@ -63,60 +118,7 @@ const SuccessModal = ({ isOpen, onClose }) => {
         }
     }, [isOpen]);
 
-    const handleClose = () => {
-        // Exit Animation
-        anime({
-            targets: [overlayRef.current, modalRef.current],
-            opacity: 0,
-            duration: 400,
-            easing: 'easeInQuad',
-            complete: () => {
-                if (onClose) onClose();
-            }
-        });
-    };
 
-    const createConfetti = (container) => {
-        if (!container) return;
-        container.innerHTML = ''; // Clear previous
-
-        const colors = ['#3b82f6', '#8b5cf6', '#10b981', '#f59e0b', '#ec4899'];
-        const particleCount = 30;
-
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('confetti-particle');
-
-            // Random styles
-            const bg = colors[Math.floor(Math.random() * colors.length)];
-            const size = Math.random() * 4 + 4; // 4px to 8px
-
-            particle.style.backgroundColor = bg;
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-
-            // Center start position needs to be relative to the checkmark or modal center
-            // Let's place them in the center of the checkmark area roughly
-            particle.style.left = '50%';
-            particle.style.top = '30%'; // Approximate checkmark height position
-
-            container.appendChild(particle);
-        }
-
-        // Animate particles
-        const particles = container.querySelectorAll('.confetti-particle');
-
-        anime({
-            targets: particles,
-            translateX: () => anime.random(-150, 150),
-            translateY: () => anime.random(-150, 100),
-            scale: [1, 0],
-            opacity: [1, 0],
-            easing: 'easeOutExpo',
-            duration: 1500,
-            autoplay: true
-        });
-    };
 
     if (!isOpen) return null;
 
