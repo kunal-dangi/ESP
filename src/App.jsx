@@ -14,6 +14,8 @@ import SyntrixApproach from './components/SyntrixApproach';
 import MarketOpportunity from './components/MarketOpportunity';
 import CompetitiveLandscape from './components/CompetitiveLandscape';
 import Roadmap from './components/Roadmap';
+import Navbar from './components/Navbar';
+import FounderDashboard from './components/FounderDashboard';
 
 const LandingPage = () => (
   <>
@@ -25,8 +27,6 @@ const LandingPage = () => (
     <HowItWorks />
     <CompetitiveLandscape />
     <ForStartups />
-    <Pricing />
-    <StartupForm />
     <Roadmap />
     <Footer />
   </>
@@ -59,9 +59,13 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <Navbar />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/dashboard" element={<FounderDashboard />} />
+          <Route path="/register" element={<StartupForm />} />
+          <Route path="/pricing" element={<Pricing />} />
         </Routes>
       </div>
     </Router>

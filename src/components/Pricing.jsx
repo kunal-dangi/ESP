@@ -1,10 +1,27 @@
 import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Pricing.css';
 
 const Pricing = () => {
     const [isYearly, setIsYearly] = useState(false);
     const [isTableExpanded, setIsTableExpanded] = useState(false);
     const tableRef = useRef(null);
+    const navigate = useNavigate();
+
+    const handleUpgrade = (planName, planCode) => {
+        localStorage.setItem('userPlan', planCode);
+        window.dispatchEvent(new Event('planChanged'));
+        alert(`Successfully upgraded to ${planName}!`);
+        navigate('/dashboard');
+    };
+
+    const handleTrial = () => {
+        const trialStart = new Date().getTime();
+        localStorage.setItem('userPlan', 'team-intelligence-trial');
+        localStorage.setItem('trialStartDate', trialStart);
+        window.dispatchEvent(new Event('planChanged'));
+        navigate('/dashboard', { state: { showTrialModal: true } });
+    };
 
     // Animation on scroll could be added here similar to other sections
     // but right now standard CSS hover effects are required
@@ -25,11 +42,11 @@ const Pricing = () => {
     };
 
     return (
-        <section className="pricing-section section" id="pricing">
+        <section className="pricing-section section" id="pricing" style={{ paddingTop: '8rem', minHeight: '100vh', paddingBottom: '4rem' }}>
             <div className="container">
                 <div className="pricing-header">
-                    <h2 className="pricing-headline">Simple, transparent <span className="gradient-text">pricing</span></h2>
-                    <p className="pricing-subheading">Choose the perfect plan for your early-stage startup.</p>
+                    <h2 className="pricing-headline">Choose Your <span className="gradient-text">Plan</span></h2>
+                    <p className="pricing-subheading">Select the plan that best fits your startup’s growth stage.</p>
 
                     <div className="billing-toggle-container">
                         <span className={`toggle-label ${!isYearly ? 'active' : ''}`}>Monthly</span>
@@ -82,7 +99,7 @@ const Pricing = () => {
                             </ul>
                         </div>
                         <div className="card-footer">
-                            <button className="btn btn-secondary plan-btn">Start Free</button>
+                            <button className="btn btn-secondary plan-btn" onClick={() => handleUpgrade('Free Plan', 'free-plan')}>Current Plan</button>
                             <p className="plan-note">No credit card required.</p>
                         </div>
                     </div>
@@ -117,14 +134,11 @@ const Pricing = () => {
                                     <svg className="check-icon accent" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
                                     Advanced match scoring
                                 </li>
-                                <li>
-                                    <svg className="check-icon accent" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                                    Signal prioritization dashboard
-                                </li>
                             </ul>
                         </div>
                         <div className="card-footer">
-                            <button className="btn btn-primary plan-btn highlight-btn">Upgrade to Team Intelligence</button>
+                            <p className="plan-note" style={{ color: 'var(--neon-green)', fontWeight: 'bold', marginBottom: '0.5rem', textAlign: 'center' }}>7-Day Free Trial</p>
+                            <button className="btn btn-primary plan-btn highlight-btn" onClick={handleTrial}>Start Free Trial</button>
                             <p className="plan-note" style={{ marginTop: '1rem', textAlign: 'center' }}>Designed to increase qualified signal detection efficiency.</p>
                         </div>
                     </div>
@@ -165,7 +179,7 @@ const Pricing = () => {
                             </ul>
                         </div>
                         <div className="card-footer">
-                            <button className="btn btn-secondary plan-btn">Go Team Activation</button>
+                            <button className="btn btn-secondary plan-btn" onClick={() => handleUpgrade('Team Activation', 'team-activation')}>Upgrade</button>
                             <p className="plan-note">Converts detected signals into structured growth actions.</p>
                         </div>
                     </div>

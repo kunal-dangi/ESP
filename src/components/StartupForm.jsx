@@ -1,9 +1,11 @@
 import React, { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import anime from 'animejs';
 import SuccessModal from './SuccessModal';
 import './StartupForm.css';
 
 const StartupForm = () => {
+    const navigate = useNavigate();
     const inputRefs = useRef([]);
     const [focused, setFocused] = useState(null);
     const [showSuccessModal, setShowSuccessModal] = useState(false);
@@ -74,6 +76,11 @@ const StartupForm = () => {
                 // Show Success Modal instead of Alert
                 setShowSuccessModal(true);
 
+                // Set dashboard access flags
+                localStorage.setItem('startupRegistered', 'true');
+                localStorage.setItem('verificationStatus', 'Pending');
+                window.dispatchEvent(new Event('startupRegistered'));
+
                 setFormData({
                     companyName: '',
                     founderName: '',
@@ -100,8 +107,11 @@ const StartupForm = () => {
     };
 
     return (
-        <section className="request-section section" id="startup-registration">
-            <SuccessModal isOpen={showSuccessModal} onClose={() => setShowSuccessModal(false)} />
+        <section className="request-section section" id="startup-registration" style={{ paddingTop: '8rem', minHeight: '100vh', paddingBottom: '4rem' }}>
+            <SuccessModal isOpen={showSuccessModal} onClose={() => {
+                setShowSuccessModal(false);
+                navigate('/dashboard');
+            }} />
 
             <div className="container form-container glass-card">
                 <h2 className="section-title">Register Your Startup</h2>

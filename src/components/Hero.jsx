@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, Suspense } from 'react';
+import { Link } from 'react-router-dom';
 import anime from 'animejs';
 import './Hero.css';
 
@@ -77,7 +78,7 @@ const Hero = () => {
                 </p>
 
                 <div className="hero-buttons" ref={btnGroupRef}>
-                    <a href="#startup-registration" className="btn btn-primary">Register Your Startup</a>
+                    <Link to="/register" className="btn btn-primary">Register Your Startup</Link>
                     <a href="#how-it-works" className="btn btn-secondary">How It Works</a>
                 </div>
             </div>

@@ -141,9 +141,10 @@ const SuccessModal = ({ isOpen, onClose }) => {
                     </div>
                 </div>
 
-                <h3 className="modal-title" style={{ position: 'relative', zIndex: 1 }}>Startup Registered Successfully</h3>
-                <p className="modal-subtitle" style={{ position: 'relative', zIndex: 1 }}>
-                    Welcome to the Lead Network. Our team will contact you shortly.
+                <h3 className="modal-title" style={{ position: 'relative', zIndex: 1 }}>Registration Successful</h3>
+                <p className="modal-subtitle" style={{ position: 'relative', zIndex: 1, marginTop: '1rem', lineHeight: '1.5' }}>
+                    Your startup has been submitted for verification.<br />
+                    Once our team confirms your details, you will gain access to the Founder Dashboard.
                 </p>
 
                 <button className="modal-close-btn" onClick={handleClose} style={{ position: 'relative', zIndex: 1 }}>
